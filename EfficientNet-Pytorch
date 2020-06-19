@@ -18,3 +18,5 @@ pip install efficientnet_pytorch
  The "freeze_support()" line can be omitted if the program
  is not going to be frozen to produce an executable.
 
+# 必須在criterion = nn.CrossEntropyLoss()前，加入下行，且之後行數要縮排
+if __name__ == '__main__':
