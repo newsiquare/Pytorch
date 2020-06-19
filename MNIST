@@ -1,0 +1,8 @@
+# 目標 : Train MNIST
+ref1: https://ithelp.ithome.com.tw/articles/10224242
+ref2: https://zhuanlan.zhihu.com/p/30249139
+ref3: https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/
+
+# 安裝env @ python3.7
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+
