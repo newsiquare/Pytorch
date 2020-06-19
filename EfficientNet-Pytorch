@@ -1,25 +1,41 @@
-# 目標 : 成功以此進行訓練
-https://github.com/lukemelas/EfficientNet-PyTorch
+#Pytorch下，用EfficientNet訓練flowers資料集
 
-# 依據作者安裝方式會失敗, https://github.com/lukemelas/EfficientNet-PyTorch
+安裝efficientnet_pytorch
+參考原作者的"直接PIP安裝"會失敗, https://github.com/lukemelas/EfficientNet-PyTorch
 pip install efficientnet_pytorch
 
-# 改這也失敗
+這也失敗
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.0 -c pytorch
 
-# 這會成功
+這會成功
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 conda install matplotlib
 
-# 再安裝
+再安裝
 pip install efficientnet_pytorch
 
+主程式碼參考 efficientnet_sample.py
+https://github.com/Levigty/EfficientNet-Pytorch
 
-# 出現error
- The "freeze_support()" line can be omitted if the program
- is not going to be frozen to produce an executable.
+使用underwater_classify.py部分內容新增入efficientnet_sample.py
+https://blog.csdn.net/Whisper_lg/article/details/106567721
 
 
-# 必須在criterion = nn.CrossEntropyLoss()前，加入下行，且之後行數要縮排
-# Ref, https://blog.csdn.net/qidailiming1994/article/details/104210354
+出現error
+The "freeze_support()" line can be omitted if the program
+is not going to be frozen to produce an executable.
+
+
+必須在criterion = nn.CrossEntropyLoss()前，
+加入if __name__ == '__main__':
+且之後行數要縮排
+參考:https://blog.csdn.net/qidailiming1994/article/details/104210354
 if __name__ == '__main__':
+
+    criterion = nn.CrossEntropyLoss()
+    if use_gpu:
+        model_ft = model_ft.cuda()
+        criterion = criterion.cuda()
+        
+        
+
