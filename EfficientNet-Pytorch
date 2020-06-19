@@ -1,5 +1,5 @@
 #Pytorch下，用EfficientNet訓練flowers資料集
-#完成後另存efficientnet_sample_1090619train_OK.py
+#本文程式碼efficientnet_sample_1090619train_OK.py
 
 下載整包, https://github.com/lukemelas/EfficientNet-PyTorch
 
