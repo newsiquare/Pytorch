@@ -11,6 +11,8 @@ pip install efficientnet_pytorch
 自動下載並成功安裝
 efficientnet_pytorch-0.6.3.tar.gz
 torch-1.5.1-cp37-none-macosx_10_9_x86_64.whl
+future-0.18.2.tar.gz
+numpy-1.19.0-cp37-cp37m-macosx_10_9_x86_64.whl
 
 再安裝
 conda install matplotlib
