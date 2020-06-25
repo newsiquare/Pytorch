@@ -25,6 +25,23 @@ torchvision-0.6.1
 conda install matplotlib
 
 
+本目錄下新增
+eff_weights
+OxFlower17_from Baidu 
+
+
+下載efficientnet-b0-355c32eb.pth，放入eff_weights
+[下載Weight] https://www.kaggle.com/nprokoptsev/efficientnet-pytorch/data
+
+
+下載flower17，並更名OxFlower17_from Baidu 
+[下載Dataset]https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
+
+
+
+init_lr=0.1,
+
+
 主程式碼下載 efficientnet_sample.py
 來自 https://github.com/Levigty/EfficientNet-Pytorch
 作者中文說明 https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
