@@ -8,45 +8,35 @@
 安裝efficientnet_pytorch
 pip install efficientnet_pytorch
 
+
 自動下載並成功安裝
 efficientnet_pytorch-0.6.3.tar.gz
 torch-1.5.1-cp37-none-macosx_10_9_x86_64.whl
 future-0.18.2.tar.gz
 numpy-1.19.0-cp37-cp37m-macosx_10_9_x86_64.whl
 
+
 安裝torchvision
 pip install torchvision
+
 
 自動下載並成功安裝
 pillow-7.1.2 
 torchvision-0.6.1
 
+
 再安裝
 conda install matplotlib
 
 
-本目錄下新增
-eff_weights
-OxFlower17_from Baidu 
-
-
+本目錄下新增 eff_weights
 下載efficientnet-b0-355c32eb.pth，放入eff_weights
 [下載Weight] https://www.kaggle.com/nprokoptsev/efficientnet-pytorch/data
 
 
-下載flower17，並更名OxFlower17_from Baidu 
 [下載Dataset]https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
-
-
-
-init_lr=0.1,
-
-
-主程式碼下載 efficientnet_sample.py
-來自 https://github.com/Levigty/EfficientNet-Pytorch
-作者中文說明 https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
-
-下載OxFlower17_from Baidu (內已建立作者指定的資料集排列, 或到上層看1090619_OxFlower17_from Baidu.jpg)
+下載下載flower17 (內已建立作者指定的資料集排列, 或到上層看1090619_OxFlower17_from Baidu.jpg)
+並更名OxFlower17_from Baidu 
 -dataset\
     -model\
     -train\
@@ -57,6 +47,15 @@ init_lr=0.1,
         -1\
         -2\
         ...
+
+
+
+考量mac沒有GPU，故修改參數縮短運算時間
+batch_size=4    (原32)
+lr=0.1          (原0.01)
+num_epochs=10   (原50)
+init_lr=0.1     (原0.01)
+
 
 
 再使用underwater_classify.py部分內容，新增入efficientnet_sample.py
