@@ -1,0 +1,58 @@
+## Pytorch下，用EfficientNet訓練flowers資料集
+## 本文程式碼efficientnet_sample_macOS_1090625train_OK.py
+## [參考1]https://github.com/lukemelas/EfficientNet-PyTorch
+## [參考2]https://github.com/Levigty/EfficientNet-Pytorch
+## [參考3]https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
+
+
+安裝efficientnet_pytorch
+pip install efficientnet_pytorch
+
+自動下載並成功安裝
+efficientnet_pytorch-0.6.3.tar.gz
+torch-1.5.1-cp37-none-macosx_10_9_x86_64.whl
+
+再安裝
+conda install matplotlib
+
+
+主程式碼下載 efficientnet_sample.py
+來自 https://github.com/Levigty/EfficientNet-Pytorch
+作者中文說明 https://blog.csdn.net/weixin_40520963/article/details/105733117?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1
+
+下載OxFlower17_from Baidu (內已建立作者指定的資料集排列, 或到上層看1090619_OxFlower17_from Baidu.jpg)
+-dataset\
+    -model\
+    -train\
+        -1\
+        -2\
+        ...
+    -test\
+        -1\
+        -2\
+        ...
+
+
+再使用underwater_classify.py部分內容，新增入efficientnet_sample.py
+https://blog.csdn.net/Whisper_lg/article/details/106567721
+
+
+出現error
+The "freeze_support()" line can be omitted if the program
+is not going to be frozen to produce an executable.
+
+
+必須在criterion = nn.CrossEntropyLoss()前，
+加入if __name__ == '__main__':
+且之後行數要縮排
+參考:https://blog.csdn.net/qidailiming1994/article/details/104210354
+if __name__ == '__main__':
+
+    criterion = nn.CrossEntropyLoss()
+    if use_gpu:
+        model_ft = model_ft.cuda()
+        criterion = criterion.cuda()
+        
+        
+        
+
