@@ -3,7 +3,7 @@
  pip install numpy opencv-python tqdm tensorboard tensorboardX pyyaml webcolors
  
 #失敗 (windows上pip不支援pycocotools)
- pip install pycocotools 
+>pip install pycocotools 
 
 #需先安裝Visual C++ 2015 build tools 
  https://go.microsoft.com/fwlink/?LinkId=691126
