@@ -14,15 +14,16 @@ pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonA
 #失敗 (沒裝CUDA,CuDNN)
 pip install torch==1.4.0
 
+   -------------------------------------------------------------------------------------------------
+   安裝CUDA10.0
+   https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
 
-安裝CUDA10.0
-https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
-
-安裝cuDNN v7.6.5  for CUDA 10.0
-https://developer.nvidia.com/rdp/cudnn-download
-将cuda\bin目录中的      cudnn64_7.dll 复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin 中
-将cuda\include目录中的  cudnn.h       复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include 中
-将cuda\lib\x64 目录中的 cudnn.lib     复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64 中
+   安裝cuDNN v7.6.5  for CUDA 10.0
+   https://developer.nvidia.com/rdp/cudnn-download
+   将cuda\bin目录中的      cudnn64_7.dll 复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin 中
+   将cuda\include目录中的  cudnn.h       复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include 中
+   将cuda\lib\x64 目录中的 cudnn.lib     复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64 中
+   -------------------------------------------------------------------------------------------------
 
 #改成
 pip install torch==1.4.0
