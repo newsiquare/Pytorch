@@ -1,4 +1,5 @@
-安裝@python3.6
+env@python3.6, pytorch1.4.0, torchvision0.5.0, cuda10.1, cudnn 7.6.5
+
 #安裝
 pip install numpy opencv-python tqdm tensorboard tensorboardX pyyaml webcolors
  
@@ -15,6 +16,7 @@ pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonA
 pip install torch==1.4.0
 
    -------------------------------------------------------------------------------------------------
+   [參考] https://zhuanlan.zhihu.com/p/106944429
    安裝CUDA10.0
    https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
 
@@ -28,6 +30,36 @@ pip install torch==1.4.0
    C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0
    C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64
    -------------------------------------------------------------------------------------------------
+
+查詢CUDA版本，出現 10.0
+nvcc -V
+
+   ------------------------------------失敗------------------------------------------------
+   #以此指令安裝 pytorch 1.4.0 會失敗
+   pip install torch==1.4.0
+     ERROR: Could not find a version that satisfies the requirement torch==1.4.0 (from versions: 0.1.2, 0.1.2.post1, 0.1.2.post2)
+     ERROR: No matching distribution found for torch==1.4.0
+     
+   #以此指令安裝 pytorch 1.4.0 會失敗
+   pip install torch==1.4.0+cu100 torchvision==0.5.0+cu100 -f https://download.pytorch.org/whl/torch_stable.html
+     ERROR: No matching distribution found for torch==1.4.0+cu100
+     
+   #以此指令安裝 pytorch 1.4.0 會失敗
+   conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.0 -c pytorch
+     UnsatisfiableError: The following specifications were found to be in conflict:
+     -cudatoolkit=10.0 -> __cuda[version='>=10.0']
+     -torchvision==0.5.0
+   
+   #以此指令安裝 pytorch 1.4.0 會失敗
+   conda install pytorch==1.4.0 torchvision cudatoolkit=10.0 -c pytorch
+   -------------------------------------------------------------------------------------------------
+
+下載CUDA 10.1, CuDNN7.6.5並安裝
+變更PATH中\V10.10 改成 \V10.1
+貼上新的cudnn64_7.dll, cudnn.h, cudnn.lib
+
+#分批安裝
+conda install pytorch==1.4.0
 
 #改成
 pip install torch==1.4.0
