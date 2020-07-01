@@ -35,7 +35,7 @@ pip install torch==1.4.0
 查詢CUDA版本，出現 10.0
 nvcc -V
 
-   ------------------------------------失敗------------------------------------------------
+   ---------------------------------------------失敗------------------------------------------------
    #以此指令安裝 pytorch 1.4.0 會失敗
    pip install torch==1.4.0
      ERROR: Could not find a version that satisfies the requirement torch==1.4.0 (from versions: 0.1.2, 0.1.2.post1, 0.1.2.post2)
@@ -67,5 +67,25 @@ nvcc -V
 conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
  
  
-# run the simple inference script, 出現一張物件偵測圖
+# 出現一張物件偵測圖
 python efficientdet_test_1090630imshow.py
+
+
+
+# --------------------------------------- 用custom Dataset 再次訓練 -----------------------------------------------
+#                                         [參考] /tutorial/train_shape.ipynb
+# custom Dataset : dataset_shape 
+# 已訓練權重      : efficientdet-d0.pth
+
+# Windows
+(1)下載https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch/releases/download/1.1/dataset_shape.tar.gz
+   解壓縮至datasets
+
+(2)下載efficientdet-d0.pth 
+   放到 weights
+
+(3)執行
+python train.py
+
+# Colab 
+可直接執行 train_shape_1090701OKcolab.ipynb
