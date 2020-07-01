@@ -62,22 +62,9 @@ nvcc -V
 nvcc -V
 
 #重新安裝 pytorch 1.4.0  (pytorch官方版安裝法, 會安裝Pytorch=1.5.1, torchvision=0.6.1)
+#但這環境就與作者不同 zylo117/Yet-Another-EfficientDet-Pytorch
 conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
-
-
-
-
-
-conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
-conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1
-
-#改成
-pip install torch==1.4.0
-
-
-pip install torchvision==0.5.0
  
  
- 
-# run the simple inference script
-python efficientdet_test.py
+# run the simple inference script, 出現一張物件偵測圖
+python efficientdet_test_1090630imshow.py
