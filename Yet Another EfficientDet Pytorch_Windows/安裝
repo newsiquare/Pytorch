@@ -58,8 +58,18 @@ nvcc -V
 變更PATH中\V10.10 改成 \V10.1
 貼上新的cudnn64_7.dll, cudnn.h, cudnn.lib
 
-#分批安裝
-conda install pytorch==1.4.0
+查詢CUDA版本，出現 10.1
+nvcc -V
+
+#重新安裝 pytorch 1.4.0  (pytorch官方版安裝法, 會安裝Pytorch=1.5.1, torchvision=0.6.1)
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+
+
+
+
+
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1
 
 #改成
 pip install torch==1.4.0
