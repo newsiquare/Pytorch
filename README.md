@@ -1,6 +1,6 @@
 # 筆記
 
-# jupyer notebook - Theme
+## jupyer notebook - Theme
 pip install jupyterthemes
 
 pip install --upgrade jupyterthemes
