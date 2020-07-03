@@ -26,7 +26,6 @@ Train a custom dataset(raccoon) with pretrained weights
           annotations/
                       instances_train2017.json
                       instances_val2017.json
-      coco/
           images/
                 train2017/
                           raccoon-1.jpg
