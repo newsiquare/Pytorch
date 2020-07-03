@@ -1,6 +1,5 @@
 # ------------------------------------- Train a custom dataset(raccoon) with pretrained weights--------------------------
-# ------------------------------------- 用custom Dataset(raccoon) 再次訓練 -----------------------------------------------
-#                                       [參考] /tutorial/train_shape.ipynb
+# ------------------------------------- 用custom Dataset(raccoon) 再次訓練 -----------------------------------------------                               
 # custom Dataset : coco_raccoon 
 
     env@python3.6, pytorch1.4.0, torchvision0.5.0, cuda10.1, cudnn 7.6.5
