@@ -1,0 +1,14 @@
+env@python3.6, pytorch1.4.0, torchvision0.5.0, cuda10.1, cudnn 7.6.5
+# 另外一個環境測試也OK,  pytorch1.2.0, torchvision0.4.0, cuda10.0, cudnn 7.4.2
+
+
+# Colab 
+可直接執行 train_shape_raccoon_1090702Colab.ipynb
+
+
+# Colab訓練紀錄
+(1) ! python train.py -c 0 -p coco_raccoon --head_only True --lr 1e-3 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 50
+Step: 249. Epoch: 49/50. Iteration: 5/5. Cls loss: 0.53440. Reg loss: 0.01692. Total loss: 0.55132: 100% 5/5 [00:05<00:00,  1.15s/it]
+Val. Epoch: 49/50. Classification loss: 0.58913. Regression loss: 0.02335. Total loss: 0.61248
+
+(2) ! python train.py -c 0 -p coco_raccoon --head_only True --lr 1e-3 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 200
