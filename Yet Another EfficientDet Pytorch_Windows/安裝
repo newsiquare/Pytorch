@@ -88,4 +88,4 @@ python efficientdet_test_1090630imshow.py
 python train.py
 
 # Colab 
-可直接執行 train_shape_1090701OKcolab.ipynb
+可直接執行 train_shape_1090701OKColab.ipynb
