@@ -1,5 +1,52 @@
-env@python3.6, pytorch1.4.0, torchvision0.5.0, cuda10.1, cudnn 7.6.5
-# 另外一個環境測試也OK,  pytorch1.2.0, torchvision0.4.0, cuda10.0, cudnn 7.4.2
+Train a custom dataset(raccoon) with pretrained weights
+
+    env@python3.6, pytorch1.4.0, torchvision0.5.0, cuda10.1, cudnn 7.6.5
+    (另外一個環境測試也OK,  pytorch1.2.0, torchvision0.4.0, cuda10.0, cudnn 7.4.2)
+
+
+[參考1] csv來源 (raccoon), https://github.com/datitran/raccoon_dataset
+#下載 https://github.com/datitran/raccoon_dataset
+#執行 python xml_to_csv.py  
+ 生成 raccoon_labels.csv
+#將raccoon_labels.csv中 weight欄, height欄刪除 + 將class欄位移到ymax右邊 + 刪除第一列filename-xmin-ymin-xmax-ymax
+#另存 raccoon_labels_1090702siquare.csv
+
+
+[參考2] csv2coco 作法, https://github.com/spytensor/prepare_detection_dataset
+#下載 https://github.com/spytensor/prepare_detection_dataset
+#新增資料夾 csv
+#將raccoon_dataset-master/images 複製到 prepare_detection_dataset-master/csv
+#將raccoon_dataset-master/raccoon_labels_1090702siquare.csv 複製到 prepare_detection_dataset-master/csv
+#打開csv2coco.py，修改如下並另存 csv2coco_1090702siquare.py
+  classname_to_id = {"raccoon": 1}
+  csv_file =  "csv/raccoon_labels_1090702siquare.csv"
+  image_dir = "csv/images/"   
+#執行 python csv2coco_1090702siquare.py
+ 生成 coco/
+          annotations/
+                      instances_train2017.json
+                      instances_val2017.json
+      coco/
+          images/
+                train2017/
+                          raccoon-1.jpg
+                          raccoon-10.jpg
+                          ....
+                val2017/
+                          raccoon-107.jpg
+                          raccoon-109.jpg
+                          ....
+
+#將prepare_detection_dataset-master/coco資料夾 複製到 Yet-Another-EfficientDet-Pytorch-master/datasets
+#將coco資料夾 更名為 coco_raccoon
+#將coco_raccoon/images/train2017 移到上一層
+#將coco_raccoon/images/val2017 移到上一層
+#將coco_raccoon/images已無東西，就刪除
+
+
+# Win10
+可直接執行 python train.py -c 0 -p coco_raccoon --head_only True --lr 1e-3 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 50
+
 
 
 # Colab 
