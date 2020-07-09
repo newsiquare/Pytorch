@@ -54,7 +54,7 @@
 可直接執行 train_shape_raccoon_1090702Colab.ipynb
 
 
-# Colab訓練紀錄
+# Colab訓練紀錄,  coco_raccoon
 (1) ! python train.py -c 0 -p coco_raccoon --head_only True --lr 1e-3 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 50
 Step: 249. Epoch: 49/50. Iteration: 5/5. Cls loss: 0.53440. Reg loss: 0.01692. Total loss: 0.55132: 100% 5/5 [00:05<00:00,  1.15s/it]
 Val. Epoch: 49/50. Classification loss: 0.58913. Regression loss: 0.02335. Total loss: 0.61248
@@ -67,13 +67,17 @@ Val. Epoch: 199/200. Classification loss: 0.21955. Regression loss: 0.02528. Tot
 Step: 3999. Epoch: 799/800. Iteration: 5/5. Cls loss: 0.20332. Reg loss: 0.01030. Total loss: 0.21362: 100% 5/5 [00:05<00:00,  1.20s/it]
 Val. Epoch: 799/800. Classification loss: 0.20138. Regression loss: 0.02516. Total loss: 0.22653
 
-# Colab訓練紀錄
+# Colab訓練紀錄, coco_pets
 (1)! python train.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 128 --load_weights weights/efficientdet-d0.pth  --num_epochs 159
 <note>TWCC開4張GPU，但GPU使用率只停在60~90% ; 而且batch size 128讓total loss降很慢
 Step: 3679. Epoch: 159/500. Iteration: 23/23. Cls loss: 0.81554. Reg loss: 0.02523. Total loss: 0.84077: 100%|█| 23/23 [00:56<00:00,  1.79s/it]
 Val. Epoch: 159/500. Classification loss: 0.81602. Regression loss: 0.02990. Total loss: 0.84592
 
 (2)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 64 --load_weights weights/efficientdet-d0.pth  --num_epochs 200
-<note>TWCC開2張GPU，但GPU使用率只停在______% ; 而且batch size 64讓total loss降很慢
-Step: 3682. Epoch: 160/500. Iteration: 3/23. Cls loss: 0.80665. Reg loss: 0.02438. Total loss: 0.83103:  13%|▏| 3/23 [00:20<02:48,  8.43s/it]^C
+<note>TWCC開2張GPU，但GPU使用率只停在30% ; 而且batch size 64讓total loss降很慢
 
+(3)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 256 --load_weights weights/efficientdet-d0.pth  --num_epochs 200
+<note>TWCC開2張GPU，但GPU memory over 
+
+(4)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 176 --load_weights weights/efficientdet-d0.pth  --num_epochs 200
+<note>TWCC開2張GPU，但GPU使用率只停在___% ; 而且batch size 176讓total loss降很慢
