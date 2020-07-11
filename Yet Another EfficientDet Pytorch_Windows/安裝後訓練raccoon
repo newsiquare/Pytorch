@@ -97,6 +97,10 @@ CPU RAM Free: 10.3 GB
 GPU 0 ... Mem Free: 6881MB / Mem Total:16280MB | Utilization  58%
 
 (7)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 500
-Total Loss = 0.88
+Step: 45999. Epoch: 499/500. Iteration: 92/92. Cls loss: 0.37431. Reg loss: 0.01869. Total loss: 0.3930
+Val. Epoch: 499/500. Classification loss: 0.43336. Regression loss: 0.02843. Total loss: 0.46180
+CPU RAM Free: 26.3 GB
+GPU 0 ... Mem Free: 5619MB / Mem Total:11264MB | Utilization  50%
+
 
 (8)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 16 --load_weights weights/efficientdet-d0.pth  --num_epochs 500
