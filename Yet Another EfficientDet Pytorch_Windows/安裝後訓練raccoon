@@ -102,5 +102,12 @@ Val. Epoch: 499/500. Classification loss: 0.43336. Regression loss: 0.02843. Tot
 CPU RAM Free: 26.3 GB
 GPU 0 ... Mem Free: 5619MB / Mem Total:11264MB | Utilization  50%
 
+--batch_size 48
+...
 
-(8)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-3 --batch_size 16 --load_weights weights/efficientdet-d0.pth  --num_epochs 500
+
+(8)! python train_GPUsRate.py -c 0 -p coco_pets --head_only True --lr 1e-4 --batch_size 32 --load_weights weights/efficientdet-d0.pth  --num_epochs 300
+..
+
+--batch_size 48
+..
