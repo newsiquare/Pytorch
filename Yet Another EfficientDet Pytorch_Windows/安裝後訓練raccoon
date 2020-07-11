@@ -103,7 +103,10 @@ CPU RAM Free: 26.3 GB
 GPU 0 ... Mem Free: 5619MB / Mem Total:11264MB | Utilization  50%
 
 --batch_size 48
-~
+Step: 30499. Epoch: 499/500. Iteration: 61/61. Cls loss: 0.34925. Reg loss: 0.02142. Total loss: 0.3706
+Val. Epoch: 499/500. Classification loss: 0.43404. Regression loss: 0.02861. Total loss: 0.46265
+CPU RAM Free: 25.4 GB
+GPU 0 ... Mem Free: 3504MB / Mem Total:11264MB | Utilization  69
 
 --batch_size 56
 ~
